@@ -1,0 +1,27 @@
+{
+  "name": "desafio-revvo",
+  "version": "1.0.0",
+  "description": "* Para o desenvolvimento do projeto deverá ser criado um repositório na conta do bitbucket ou github do candidato com o seguinte nome \"desafio_revvo\"(ex.: http://bitbucket.org/seu_nome/desafio_revvo).\r * O desafio deve ser armazenado em seu respectivo repositório.\r * Deve ser evidenciado a evolução do código desenvolvido (commitar sempre).\r * No README deverá ter as informações do desenvolvedor e do projeto.\r * Ao finalizar, enviar e-mail para plataformas@somosrevvo.com.br com a url do seu repositório, com o assunto [Desafio Revvo] - Finalizado.\r * Mesmo que não tenha finalizado por completo, pode nos enviar como finalizado ao fim do prazo. Temos várias linhas de avaliação.\r * Dê mais atenção a sua melhor skill.",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "gulp buildCss",
+    "dev":       "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/leolearningbrasil/desafio-revvo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/leolearningbrasil/desafio-revvo/issues"
+  },
+  "homepage": "https://bitbucket.org/leolearningbrasil/desafio-revvo#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-sass": "^6.0.1"
+  }
+}
