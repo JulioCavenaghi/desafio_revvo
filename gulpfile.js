@@ -1,19 +1,22 @@
 const { src, dest, watch, series } = require('gulp');
-const sass  = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const browserSync  = require('browser-sync').create();
+const sass       = require('gulp-sass')(require('sass'));
+const postcss    = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const browserSync = require('browser-sync').create();
 
 function buildCss() {
   return src('assets/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer())
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(dest('assets/css'))
     .pipe(browserSync.stream());
 }
 
 function serve() {
   browserSync.init({
-    proxy: 'localhost/desafio_revvo/src',
+    proxy: 'http://localhost/desafio_revvo',
+    serveStatic: ['.' ],
+    startPath: '/src',
     notify: false
   });
   watch('assets/scss/**/*.scss', buildCss);
