@@ -1,0 +1,324 @@
+$font-stack: 'Open Sans', sans-serif;
+$primary-color: #00a650;
+$text-color: #333;
+$light-gray: #f5f5f5;
+$medium-gray: #e0e0e0;
+$dark-overlay: rgba(0, 0, 0, 0.6);
+$badge-bg: #ffc700;
+$badge-text: #333;
+$btn-radius: 20px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  background: $light-gray;
+  color: $text-color;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $medium-gray;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+
+  .search-box {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 2rem;
+
+    input {
+      width: 100%;
+      padding: 0.5rem 2.5rem 0.5rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .fa-search {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    position: relative;
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    .user-name {
+      position: relative;
+      cursor: pointer;
+
+      .dropdown-toggle { margin-left: 0.25rem; }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        list-style: none;
+        padding: 0.5rem 0;
+        margin: 0.25rem 0 0;
+        border: 1px solid $medium-gray;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: none;
+        z-index: 3;
+
+        li {
+          padding: 0.5rem 1rem;
+
+          a {
+            color: $text-color;
+            font-size: 0.9rem;
+
+            &:hover {
+              background: $light-gray;
+            }
+          }
+        }
+      }
+
+      &.open .dropdown-menu {
+        display: block;
+      }
+    }
+  }
+}
+
+/* Slider Styles (unchanged) */
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  margin-bottom: 2rem;
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/slide.jpg') center/cover no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      background: $dark-overlay;
+      color: #fff;
+      padding: 2rem;
+      max-width: 300px;
+      border-radius: 4px;
+
+      h2 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border: 1px solid #fff;
+        border-radius: $btn-radius;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    padding: 0 1rem;
+    z-index: 2;
+
+    &.prev { left: 1rem; }
+    &.next { right: 1rem; }
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background: #ddd;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.active {
+        background: #fff;
+      }
+    }
+  }
+}
+
+.courses {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+
+    .card {
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      img { width: 100%; display: block; }
+
+      .card-content {
+        padding: 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+          color: #666;
+          margin-bottom: auto;
+        }
+
+        .btn {
+          margin-top: 1rem;
+          background: $primary-color;
+          color: #fff;
+          padding: 0.5rem;
+          text-align: center;
+          border-radius: $btn-radius;
+          font-size: 0.9rem;
+        }
+      }
+
+      .badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: $badge-bg;
+        color: $badge-text;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.5rem;
+        border-radius: 3px;
+      }
+
+      &.add {
+        border: 2px dashed #ccc;
+        justify-content: center;
+        align-items: center;
+
+        .add-icon { font-size: 2rem; color: #ccc; margin-bottom: 0.5rem; }
+        span { font-size: 0.9rem; color: #999; }
+      }
+    }
+  }
+}
+
+footer {
+  background: #fff;
+  padding: 2rem;
+  border-top: 1px solid $medium-gray;
+  font-size: 0.9rem;
+  color: #777;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .footer-logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p { font-size: 0.85rem; color: #999; }
+
+    .footer-col {
+      margin-bottom: 1rem;
+
+      h5 { font-weight: 600; margin-bottom: 0.5rem; }
+    }
+
+    .social-icons a { margin-right: 0.5rem; color: #777; font-size: 1.2rem; }
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #ccc;
+    margin-top: 1rem;
+  }
+}
