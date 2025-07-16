@@ -1,16 +1,15 @@
-<?php
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
     <head>
     <meta charset="UTF-8">
     <title>LEO - Home</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
     <body>
-        <?php include __DIR__ . '/includes/modal.php'; ?>
+        <?php include __DIR__ . '/src/includes/modal.php'; ?>
         <header>
             <div class="logo">LEO</div>
             <div class="search-box">
@@ -18,7 +17,7 @@
                 <i class="fas fa-search"></i>
             </div>
             <div class="user">
-                <img src="../assets/images/avatar.jpg" alt="Usuário">
+                <img src="assets/images/avatar.jpg" alt="Usuário">
                 <div class="user-name">
                 Seja bem‑vindo, <p><strong>Julio Cavenaghi</strong>
                 <i class="fas fa-chevron-down dropdown-toggle"></i>
@@ -66,7 +65,7 @@
             <h3>Meus Cursos</h3>
             <div class="grid">
                 <div class="card">
-                    <img src="../assets/images/course.jpg" alt="Curso">
+                    <img src="assets/images/course.jpg" alt="Curso">
                     <div class="card-content">
                     <h4>Pellentesque Malesuada</h4>
                     <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
@@ -74,7 +73,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="../assets/images/course.jpg" alt="Curso">
+                    <img src="assets/images/course.jpg" alt="Curso">
                     <div class="card-content">
                     <h4>Pellentesque Malesuada</h4>
                     <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
@@ -82,7 +81,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="../assets/images/course.jpg" alt="Curso">
+                    <img src="assets/images/course.jpg" alt="Curso">
                     <div class="card-content">
                     <h4>Pellentesque Malesuada</h4>
                     <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
@@ -90,7 +89,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="../assets/images/course.jpg" alt="Curso">
+                    <img src="assets/images/course.jpg" alt="Curso">
                     <div class="card-content">
                     <h4>Pellentesque Malesuada</h4>
                     <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
@@ -98,7 +97,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="../assets/images/course.jpg" alt="Curso">
+                    <img src="assets/images/course.jpg" alt="Curso">
                     <div class="card-content">
                     <h4>Pellentesque Malesuada</h4>
                     <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
@@ -107,7 +106,7 @@
                 </div>
                 <div class="card">
                     <span class="badge">Novo</span>
-                    <img src="../assets/images/course.jpg" alt="Curso">
+                    <img src="assets/images/course.jpg" alt="Curso">
                     <div class="card-content">
                     <h4>Pellentesque Malesuada</h4>
                     <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
@@ -143,7 +142,7 @@
             </div>
         </footer>
 
-        <script src="../assets/js/main.js"></script>
+        <script src="assets/js/main.js"></script>
 
     </body>
 </html>

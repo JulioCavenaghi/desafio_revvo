@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Exemplo de Modal</title>
-  <link rel="stylesheet" href="../assets/css/modal.css" />
-  <script defer src="../assets/js/modal.js"></script>
+  <link rel="stylesheet" href="assets/css/modal.css" />
+  <script defer src="assets/js/modal.js"></script>
 </head>
 <body>
 
@@ -13,7 +13,7 @@
     <div class="modal">
       <button class="modal__close" aria-label="Fechar modal">&times;</button>
       <div class="modal__header">
-        <img src="../assets/images/header-modal.jpg" alt="Ilustração topo do modal">
+        <img src="assets/images/header-modal.jpg" alt="Ilustração topo do modal">
       </div>
       <div class="modal__body">
         <h2 class="modal__title">EGESTAS TORTOR VULPUTATE</h2>
