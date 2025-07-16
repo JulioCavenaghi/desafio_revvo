@@ -1,0 +1,12 @@
+Options -MultiViews +FollowSymLinks
+
+RewriteEngine On
+AcceptPathInfo On
+
+RewriteBase /desafio_revvo/api/
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.php [L]
