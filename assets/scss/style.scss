@@ -8,6 +8,11 @@ $badge-bg: #ffc700;
 $badge-text: #333;
 $btn-radius: 20px;
 
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+
 * {
   margin: 0;
   padding: 0;
@@ -19,11 +24,22 @@ body {
   background: $light-gray;
   color: $text-color;
   line-height: 1.4;
+  font-size: 0.9rem;
+
+  @media (min-width: $bp-md) {
+    font-size: 1rem;
+  }
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+// Make images and videos fluid
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 header {
@@ -33,6 +49,7 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $medium-gray;
+  flex-wrap: wrap;
 
   .logo {
     font-size: 1.5rem;
@@ -44,7 +61,8 @@ header {
     position: relative;
     flex: 1;
     max-width: 400px;
-    margin: 0 2rem;
+    margin: 1rem 0;
+    order: 3;
 
     input {
       width: 100%;
@@ -61,6 +79,11 @@ header {
       transform: translateY(-50%);
       color: #999;
     }
+
+    @media (min-width: $bp-md) {
+      order: 2;
+      margin: 0 2rem;
+    }
   }
 
   .user {
@@ -68,6 +91,8 @@ header {
     align-items: center;
     font-size: 0.9rem;
     position: relative;
+    order: 2;
+    margin-left: auto;
 
     img {
       width: 32px;
@@ -113,15 +138,23 @@ header {
         display: block;
       }
     }
+
+    @media (min-width: $bp-md) {
+      order: 3;
+    }
   }
 }
 
-/* Slider Styles (unchanged) */
+// Slider Styles
 .slider {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 200px;
   margin-bottom: 2rem;
+
+  @media (min-width: $bp-md) {
+    height: 300px;
+  }
 
   .slide {
     position: absolute;
@@ -165,6 +198,11 @@ header {
         border: 1px solid #fff;
         border-radius: $btn-radius;
         font-size: 0.9rem;
+
+        @media (max-width: $bp-sm) {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.85rem;
+        }
       }
     }
   }
@@ -206,6 +244,7 @@ header {
   }
 }
 
+// Courses Section
 .courses {
   max-width: 1200px;
   margin: 0 auto 3rem;
@@ -214,12 +253,27 @@ header {
   h3 {
     font-weight: 600;
     margin-bottom: 1rem;
+    line-height: 1.2;
+
+    @media (max-width: $bp-sm) {
+      text-align: center;
+    }
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1rem;
+
+    @media (min-width: $bp-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $bp-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: $bp-lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     .card {
       background: #fff;
@@ -257,6 +311,11 @@ header {
           text-align: center;
           border-radius: $btn-radius;
           font-size: 0.9rem;
+
+          @media (max-width: $bp-sm) {
+            padding: 0.4rem;
+            font-size: 0.85rem;
+          }
         }
       }
 
@@ -270,6 +329,12 @@ header {
         font-weight: 600;
         padding: 0.25rem 0.5rem;
         border-radius: 3px;
+
+        @media (max-width: $bp-sm) {
+          top: 4px;
+          right: 4px;
+          font-size: 0.7rem;
+        }
       }
 
       &.add {
@@ -284,6 +349,7 @@ header {
   }
 }
 
+// Footer
 footer {
   background: #fff;
   padding: 2rem;
