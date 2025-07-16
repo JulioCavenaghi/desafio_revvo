@@ -44,7 +44,18 @@ class Course {
     }
 
     public function update() {
-
+        $stmt = $this->conn->prepare("
+            UPDATE {$this->table}
+            SET title = :title,
+                image = :image,
+                description = :description
+            WHERE id = :id
+        ");
+        $stmt->bindParam(':title', $this->title);
+        $stmt->bindParam(':image', $this->image);
+        $stmt->bindParam(':description', $this->description);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 
     public function delete() {
