@@ -35,7 +35,7 @@ class CourseController {
 
         if ($parts[0] !== 'courses') {
             http_response_code(404);
-            echo json_encode(['message' => 'Resource not found']);
+            echo json_encode(['message' => 'Paramêtro não encontrado']);
             exit;
         }
 
@@ -67,7 +67,7 @@ class CourseController {
 
             default:
                 http_response_code(405);
-                echo json_encode(['message' => 'Method Not Allowed']);
+                echo json_encode(['message' => 'Metodo não suportado']);
         }
     }
 
@@ -82,45 +82,71 @@ class CourseController {
             echo json_encode($course);
         } else {
             http_response_code(404);
-            echo json_encode(['message' => 'Course not found']);
+            echo json_encode(['message' => 'Curso não encontrado']);
         }
     }
 
     private function create() {
         $data = json_decode(file_get_contents('php://input'), true);
-        $this->course->title       = $data['title']       ?? null;
-        $this->course->image       = $data['image']       ?? null;
-        $this->course->description = $data['description'] ?? null;
+        $this->course->title        = $data['title']        ?? null;
+        $this->course->image        = $data['image']        ?? null;
+        $this->course->description  = $data['description']  ?? null;
+        $this->course->url          = $data['url']          ?? null;
+
+        if (
+            empty($this->course->title) ||
+            empty($this->course->image) ||
+            empty($this->course->description) ||
+            empty($this->course->url)
+        ) {
+            http_response_code(400);
+            echo json_encode(['message' => 'Todos os campos (title, image, description, url) são obrigatórios.']);
+            return;
+        }
 
         if ($this->course->create()) {
             http_response_code(201);
-            echo json_encode(['message' => 'Course created', 'id' => $this->course->id]);
+            echo json_encode(['message' => 'Curso registrado com sucesso', 'id' => $this->course->id]);
         } else {
             http_response_code(400);
-            echo json_encode(['message' => 'Unable to create course']);
+            echo json_encode(['message' => 'Não foi possível registrar o curso']);
         }
     }
 
-    private function update() {
-        $data = json_decode(file_get_contents('php://input'), true);
-        $this->course->title       = $data['title']       ?? $this->course->title;
-        $this->course->image       = $data['image']       ?? $this->course->image;
-        $this->course->description = $data['description'] ?? $this->course->description;
 
-        if ($this->course->update()) {
-            echo json_encode(['message' => 'Course updated']);
+    private function update() {
+       $data = json_decode(file_get_contents('php://input'), true);
+        $this->course->title        = $data['title']        ?? null;
+        $this->course->image        = $data['image']        ?? null;
+        $this->course->description  = $data['description']  ?? null;
+        $this->course->url          = $data['url']          ?? null;
+
+        if (
+            empty($this->course->title) ||
+            empty($this->course->image) ||
+            empty($this->course->description) ||
+            empty($this->course->url)
+        ) {
+            http_response_code(400);
+            echo json_encode(['message' => 'Todos os campos (title, image, description, url) são obrigatórios.']);
+            return;
+        }
+
+        if ($this->course->create()) {
+            http_response_code(201);
+            echo json_encode(['message' => 'Curso atualizado com sucesso', 'id' => $this->course->id]);
         } else {
             http_response_code(400);
-            echo json_encode(['message' => 'Unable to update course']);
+            echo json_encode(['message' => 'Não foi possível atuaalizar o curso']);
         }
     }
 
     private function delete() {
         if ($this->course->delete()) {
-            echo json_encode(['message' => 'Course deleted']);
+            echo json_encode(['message' => 'Curso deletado com sucesso']);
         } else {
             http_response_code(400);
-            echo json_encode(['message' => 'Unable to delete course']);
+            echo json_encode(['message' => 'Não foi possível atuaalizar o curso']);
         }
     }
 }
