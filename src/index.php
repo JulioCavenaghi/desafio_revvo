@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <?php include __DIR__ . '/includes/modal.php'; ?>
         <header>
             <div class="logo">LEO</div>
             <div class="search-box">
