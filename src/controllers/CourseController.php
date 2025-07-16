@@ -132,7 +132,7 @@ class CourseController {
             return;
         }
 
-        if ($this->course->create()) {
+        if ($this->course->update()) {
             http_response_code(201);
             echo json_encode(['message' => 'Curso atualizado com sucesso', 'id' => $this->course->id]);
         } else {
