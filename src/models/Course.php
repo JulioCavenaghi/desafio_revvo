@@ -19,11 +19,13 @@ class Course {
     }
 
     public function readAll() {
-
+        $stmt = $this->conn->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function readOne() {
 
+        
     }
 
     public function create() {
