@@ -11,6 +11,7 @@ class Course {
     public $title;
     public $image;
     public $description;
+    public $url;
     public $created_at;
 
     public function __construct(PDO $db) {
@@ -26,11 +27,24 @@ class Course {
     }
 
     public function create() {
-        
+        $stmt = $this->conn->prepare("
+            INSERT INTO {$this->table} (title, image, description, url)
+            VALUES (:title, :image, :description, :url)
+        ");
+        $stmt->bindParam(':title',       $this->title);
+        $stmt->bindParam(':image',       $this->image);
+        $stmt->bindParam(':description', $this->description);
+        $stmt->bindParam(':url',         $this->url);
+
+        if ($stmt->execute()) {
+            $this->id = $this->conn->lastInsertId();
+            return true;
+        }
+        return false;
     }
 
     public function update() {
-        
+
     }
 
     public function delete() {
