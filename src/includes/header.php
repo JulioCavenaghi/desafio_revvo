@@ -24,7 +24,11 @@ if (!isset($pageCss)) {
     <header>
         <div class="logo" onclick="window.location.href='/desafio_revvo'">LEO</div>
         <div class="search-box">
-            <input type="text" placeholder="Pesquisar cursos...">
+            <input
+            type="text"
+            id="searchInput"
+            placeholder="Pesquisar cursos..."
+            >
         </div>
         <div class="user">
             <img src="/desafio_revvo/assets/images/avatar.jpg" alt="Usuário">

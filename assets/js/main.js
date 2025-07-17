@@ -74,13 +74,23 @@
     })
       .then(res => {
         if (!res.ok) throw new Error('Erro ao deletar');
-        loadCourses();
+        // Recarrega a página após exclusão bem-sucedida
+        location.reload();
       })
       .catch(err => console.error(err));
   }
 
-  function loadCourses() {
-    const grid = document.getElementById('coursesGrid');
+  function filterCourses(term, grid) {
+    const text = term.trim().toLowerCase();
+    grid.querySelectorAll('.card:not(.add)').forEach(card => {
+      const title = card.querySelector('h4').textContent.toLowerCase();
+      const desc  = card.querySelector('p').textContent.toLowerCase();
+      const match = title.includes(text) || desc.includes(text);
+      card.style.display = match ? '' : 'none';
+    });
+  }
+
+  function loadCourses(grid, searchValue) {
     fetch('http://localhost/desafio_revvo/api/index.php/courses')
       .then(res => res.json())
       .then(courses => {
@@ -91,10 +101,20 @@
           const card = createCourseCard(course);
           grid.insertBefore(card, addCard);
         });
+        filterCourses(searchValue, grid);
       })
       .catch(err => console.error('Erro ao carregar cursos:', err));
   }
 
-  document.addEventListener('DOMContentLoaded', loadCourses);
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid        = document.getElementById('coursesGrid');
+    const searchInput = document.getElementById('searchInput');
+
+    searchInput.addEventListener('input', e => {
+      filterCourses(e.target.value, grid);
+    });
+
+    loadCourses(grid, searchInput.value);
+  });
 
 })();

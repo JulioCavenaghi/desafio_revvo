@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     btn.addEventListener('click', () => {
-        alert()
         const MAX_SIZE = 1 * 1024 * 1024; 
 
         if (fileEl.files && fileEl.files[0]) {
