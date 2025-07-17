@@ -14,7 +14,7 @@ if (!isset($pageCss)) {
     <title><?= $pageTitle ?></title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/desafio_revvo/assets/css/style.css">
     <?php foreach ($pageCss as $cssPath): ?>
         <link rel="stylesheet" href="<?= $cssPath ?>">
     <?php endforeach; ?>

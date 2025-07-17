@@ -48,6 +48,9 @@ include __DIR__ . '/src/includes/modal.php';
     </div>
 </section>
 
+<script src="/desafio_revvo/assets/js/main.js"></script>
+
+
 <?php
 include __DIR__ . '/src/includes/footer.php';
 ?>

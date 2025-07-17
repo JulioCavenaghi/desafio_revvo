@@ -4,9 +4,8 @@
   $apiBase = 'http://localhost/desafio_revvo/api/index.php/courses';
   $pageTitle = $isEdit ? 'Editar Curso' : 'Novo Curso';
   $pageCss   = [
-    '../../assets/css/course_form.css',
-    '../../assets/css/style.css',
-    '../../assets/css/modal.css',
+    '/desafio_revvo/assets/css/course_form.css',
+    '/desafio_revvo/assets/css/style.css',
   ];
   include __DIR__ . '/../includes/header.php';
 ?>
@@ -44,7 +43,7 @@
     apiBase: '<?= $apiBase ?>'
   };
 </script>
-<script src="../../assets/js/course_form.js"></script>
+<script src="/desafio_revvo/assets/js/course_form.js" defer></script>
 
 <?php
   include __DIR__ . '/../includes/footer.php';
