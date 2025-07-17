@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     btn.addEventListener('click', () => {
+        alert()
+        const MAX_SIZE = 1 * 1024 * 1024; 
+
+        if (fileEl.files && fileEl.files[0]) {
+            if (fileEl.files[0].size > MAX_SIZE) {
+                const sizeMB = (fileEl.files[0].size / (1024*1024)).toFixed(2);
+                alert(`Este arquivo tem ${sizeMB} MB, mas o limite é 1 MB.`);
+                return;
+            }
+        }
+
         const convertAndSubmit = (base64Image) => {
             const payload = {
                 title: titleEl.value,
@@ -46,23 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(resp => {
                 alert(resp.data.message || 'Operação realizada com sucesso!');
-
                 if (resp.status === 201) {
                     window.location.href = '../../';
                 }
             })
             .catch(err => {
-            console.error(err);
-            alert('Ocorreu um erro. Tente novamente.');
+                console.error(err);
+                alert('Ocorreu um erro. Tente novamente.');
             });
         };
 
         if (fileEl.files && fileEl.files[0]) {
-        const reader = new FileReader();
-        reader.onload = () => convertAndSubmit(reader.result.split(',')[1]);
-        reader.readAsDataURL(fileEl.files[0]);
+            const reader = new FileReader();
+            reader.onload = () => convertAndSubmit(reader.result.split(',')[1]);
+            reader.readAsDataURL(fileEl.files[0]);
         } else {
-        convertAndSubmit(existingImageBase64);
+            convertAndSubmit(existingImageBase64);
         }
     });
 });
