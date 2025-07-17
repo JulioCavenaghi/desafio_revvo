@@ -55,7 +55,7 @@
 
   function deleteCourse(id) {
     if (!confirm('Tem certeza que deseja excluir este curso?')) return;
-    fetch(`http://localhost/desafio_revvo/api/index.php/courses/${id}`, {
+    fetch(`/desafio_revvo/api/index.php/courses/${id}`, {
       method: 'DELETE'
     })
       .then(res => {
@@ -76,7 +76,7 @@
   }
 
   function loadCourses(grid, searchValue) {
-    fetch('http://localhost/desafio_revvo/api/index.php/courses')
+    fetch('/desafio_revvo/api/index.php/courses')
       .then(res => res.json())
       .then(courses => {
         Array.from(grid.querySelectorAll('.card:not(.add)')).forEach(el => el.remove());

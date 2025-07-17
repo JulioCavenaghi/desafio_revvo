@@ -1,7 +1,7 @@
 <?php
   $id     = isset($_GET['id']) ? $_GET['id'] : null;
   $isEdit = $id ? true : false;
-  $apiBase = 'http://localhost/desafio_revvo/api/index.php/courses';
+  $apiBase = 'desafio_revvo/api/index.php/courses';
   $pageTitle = $isEdit ? 'Editar Curso' : 'Novo Curso';
   $pageCss   = [
     '/desafio_revvo/assets/css/course_form.css',
