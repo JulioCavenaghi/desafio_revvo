@@ -1,4 +1,5 @@
 .course-form {
+  width: 100%;
   max-width: 600px;
   margin: 2rem auto;
   background: #fff;
@@ -13,6 +14,7 @@
   margin-bottom: 1.5rem;
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
 }
 .course-form .form-group {
   margin-bottom: 1rem;
@@ -74,6 +76,53 @@
   gap: 1rem;
   margin-top: 2rem;
   align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .course-form {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+  }
+  .form-group {
+    margin-bottom: 0.8rem;
+  }
+  .form-group label {
+    font-size: 0.85rem;
+  }
+  .form-group input[type=text],
+  .form-group textarea {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  .form-actions {
+    margin-top: 1.5rem;
+    gap: 0.75rem;
+  }
+  .btn-submit,
+  .btn-cancel {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 480px) {
+  .course-form {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .form-group label {
+    font-size: 0.8rem;
+  }
+  .form-group input[type=text],
+  .form-group textarea {
+    font-size: 0.8rem;
+  }
+  .btn-submit,
+  .btn-cancel {
+    font-size: 0.8rem;
+  }
 }
 
 /*# sourceMappingURL=course_form.css.map */

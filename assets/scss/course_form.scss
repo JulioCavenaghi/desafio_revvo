@@ -1,6 +1,7 @@
 @use "sass:color";
 
 .course-form {
+  width: 100%;
   max-width: 600px;
   margin: 2rem auto;
   background: #fff;
@@ -8,7 +9,6 @@
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
-  // Ensure padding is included in width
   *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -17,6 +17,7 @@
     margin-bottom: 1.5rem;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
   }
 
   .form-group {
@@ -49,7 +50,6 @@
     }
   }
 
-  // Shared button styles
   .btn-submit,
   .btn-cancel {
     display: block;
@@ -69,7 +69,6 @@
   .btn-submit {
     background: #00a650;
     color: #fff;
-
     &:hover {
       background: color.adjust(#00a650, $lightness: -5%);
     }
@@ -78,7 +77,6 @@
   .btn-cancel {
     background: #ccc;
     color: #333;
-
     &:hover {
       background: color.adjust(#ccc, $lightness: -5%);
     }
@@ -90,5 +88,51 @@
     gap: 1rem;
     margin-top: 2rem;
     align-items: stretch;
+  }
+}
+
+// Breakpoint tablets
+@media (max-width: 768px) {
+  .course-form {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+  }
+  .form-group {
+    margin-bottom: 0.8rem;
+    label { font-size: 0.85rem; }
+    input[type="text"],
+    textarea {
+      padding: 0.5rem;
+      font-size: 0.85rem;
+    }
+  }
+  .form-actions {
+    margin-top: 1.5rem;
+    gap: 0.75rem;
+  }
+  .btn-submit,
+  .btn-cancel {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+// Breakpoint mobile
+@media (max-width: 480px) {
+  .course-form {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .form-group {
+    label { font-size: 0.8rem; }
+    input[type="text"],
+    textarea { font-size: 0.8rem; }
+  }
+  .btn-submit,
+  .btn-cancel {
+    font-size: 0.8rem;
   }
 }

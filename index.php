@@ -42,7 +42,7 @@ include __DIR__ . '/src/includes/modal.php';
         <div class="card add">
             <a href="http://localhost/desafio_revvo/src/views/course_form.php">
                 <i class="fas fa-folder-plus add-icon"></i>
-                <p>Adicionar cursos
+                <p>Adicionar curso
             </a></p>
         </div>
     </div>

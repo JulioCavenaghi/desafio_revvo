@@ -11,6 +11,7 @@ if (!isset($pageCss)) {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $pageTitle ?></title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -24,7 +25,6 @@ if (!isset($pageCss)) {
         <div class="logo" onclick="window.location.href='/desafio_revvo'">LEO</div>
         <div class="search-box">
             <input type="text" placeholder="Pesquisar cursos...">
-            <i class="fas fa-search"></i>
         </div>
         <div class="user">
             <img src="/desafio_revvo/assets/images/avatar.jpg" alt="Usuário">
