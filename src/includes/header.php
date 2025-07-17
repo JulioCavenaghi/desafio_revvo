@@ -21,6 +21,7 @@ if (!isset($pageCss)) {
     <?php endforeach; ?>
 </head>
 <body>
+    <script src="/desafio_revvo/assets/js/header.js"></script>
     <header>
         <div class="logo" onclick="window.location.href='/desafio_revvo'">LEO</div>
         <div class="search-box">

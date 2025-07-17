@@ -21,20 +21,6 @@
 
   setInterval(() => goToSlide(current + 1), 5000);
 
-  const userName = document.querySelector('.user-name');
-  const toggle   = document.querySelector('.dropdown-toggle');
-
-  toggle.addEventListener('click', function(e) {
-    e.preventDefault();
-    userName.classList.toggle('open');
-  });
-
-  document.addEventListener('click', function(e) {
-    if (!userName.contains(e.target)) {
-      userName.classList.remove('open');
-    }
-  });
-
   function createCourseCard(course) {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -74,7 +60,6 @@
     })
       .then(res => {
         if (!res.ok) throw new Error('Erro ao deletar');
-        // Recarrega a página após exclusão bem-sucedida
         location.reload();
       })
       .catch(err => console.error(err));
@@ -94,8 +79,7 @@
     fetch('http://localhost/desafio_revvo/api/index.php/courses')
       .then(res => res.json())
       .then(courses => {
-        Array.from(grid.querySelectorAll('.card:not(.add)'))
-             .forEach(el => el.remove());
+        Array.from(grid.querySelectorAll('.card:not(.add)')).forEach(el => el.remove());
         const addCard = grid.querySelector('.card.add');
         courses.forEach(course => {
           const card = createCourseCard(course);
