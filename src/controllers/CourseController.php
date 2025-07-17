@@ -113,7 +113,6 @@ class CourseController {
         }
     }
 
-
     private function update() {
        $data = json_decode(file_get_contents('php://input'), true);
         $this->course->title        = $data['title']        ?? null;
