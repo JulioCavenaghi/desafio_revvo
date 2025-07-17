@@ -31,9 +31,13 @@
       <label for="url">URL do Curso</label>
       <input type="text" id="url" placeholder="https://...">
     </div>
-    <button id="submitBtn" class="btn-submit">
-      <?= $isEdit ? 'Atualizar Curso' : 'Criar Curso' ?>
-    </button>
+    <div class="form-actions">
+      <button id="submitBtn" class="btn-submit">
+        <?= $isEdit ? 'Atualizar Curso' : 'Criar Curso' ?>
+      </button>
+      <a href="http://localhost/desafio_revvo/" class="btn-cancel">Cancelar</a>
+
+    </div>
   </section>
 
   <script>

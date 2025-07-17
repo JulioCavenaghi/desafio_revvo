@@ -252,11 +252,32 @@ header .user .user-name.open .dropdown-menu {
 .courses .grid .card {
   background: #fff;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
   flex-direction: column;
+  min-height: 300px;
+}
+.courses .grid .card .actions {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  z-index: 2;
+}
+.courses .grid .card .actions i {
+  cursor: pointer;
+  font-size: 1rem;
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, transform 0.2s;
+}
+.courses .grid .card .actions i:hover {
+  background: #c0392b;
+  transform: scale(1.1);
 }
 .courses .grid .card img {
   width: 100%;
@@ -323,6 +344,11 @@ header .user .user-name.open .dropdown-menu {
 .courses .grid .card.add span {
   font-size: 0.9rem;
   color: #999;
+}
+.courses .grid .card.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer {

@@ -18,13 +18,13 @@
             </div>
             <div class="user">
                 <img src="assets/images/avatar.jpg" alt="Usuário">
-                <div class="user-name">
-                Seja bem‑vindo, <p><strong>Julio Cavenaghi</strong>
-                <i class="fas fa-chevron-down dropdown-toggle"></i>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Perfil</a></li>
-                    <li><a href="#">Sair</a></li>
-                </ul>
+                <div class="user-name dropdown-toggle">
+                    Seja bem‑vindo, <p><strong>Julio Cavenaghi</strong>
+                    <i class="fas fa-chevron-down"></i>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Sair</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
@@ -63,62 +63,16 @@
 
         <section class="courses">
             <h3>Meus Cursos</h3>
-            <div class="grid">
-                <div class="card">
-                    <img src="assets/images/course.jpg" alt="Curso">
-                    <div class="card-content">
-                    <h4>Pellentesque Malesuada</h4>
-                    <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
-                    <a href="#" class="btn">Ver Curso</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/images/course.jpg" alt="Curso">
-                    <div class="card-content">
-                    <h4>Pellentesque Malesuada</h4>
-                    <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
-                    <a href="#" class="btn">Ver Curso</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/images/course.jpg" alt="Curso">
-                    <div class="card-content">
-                    <h4>Pellentesque Malesuada</h4>
-                    <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
-                    <a href="#" class="btn">Ver Curso</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/images/course.jpg" alt="Curso">
-                    <div class="card-content">
-                    <h4>Pellentesque Malesuada</h4>
-                    <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
-                    <a href="#" class="btn">Ver Curso</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/images/course.jpg" alt="Curso">
-                    <div class="card-content">
-                    <h4>Pellentesque Malesuada</h4>
-                    <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
-                    <a href="#" class="btn">Ver Curso</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <span class="badge">Novo</span>
-                    <img src="assets/images/course.jpg" alt="Curso">
-                    <div class="card-content">
-                    <h4>Pellentesque Malesuada</h4>
-                    <p>Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue.</p>
-                    <a href="#" class="btn">Ver Curso</a>
-                    </div>
-                </div>
-                <div class="card add">
-                    <i class="fas fa-folder-plus add-icon"></i>
-                    <span>Adicionar Curso</span>
-                </div>
+            <div class="grid" id="coursesGrid">
+                 <div class="card add">
+                    <a href="http://localhost/desafio_revvo/src/views/course_form.php">
+                        <i class="fas fa-folder-plus add-icon"></i>
+                        <p>Adicionar cursos
+                    </a>
+                </div></p>
             </div>
         </section>
+
 
         <footer>
             <div class="footer-container">

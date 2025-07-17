@@ -8,7 +8,6 @@ $badge-bg: #ffc700;
 $badge-text: #333;
 $btn-radius: 20px;
 
-// Breakpoints
 $bp-sm: 576px;
 $bp-md: 768px;
 $bp-lg: 992px;
@@ -36,7 +35,6 @@ a {
   color: inherit;
 }
 
-// Make images and videos fluid
 img, video {
   max-width: 100%;
   height: auto;
@@ -145,7 +143,6 @@ header {
   }
 }
 
-// Slider Styles
 .slider {
   position: relative;
   overflow: hidden;
@@ -244,7 +241,6 @@ header {
   }
 }
 
-// Courses Section
 .courses {
   max-width: 1200px;
   margin: 0 auto 3rem;
@@ -278,11 +274,35 @@ header {
     .card {
       background: #fff;
       border-radius: 4px;
-      overflow: hidden;
+      overflow: visible;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: relative;
       display: flex;
       flex-direction: column;
+      min-height: 300px;
+
+      .actions {
+        position: absolute;
+        top: -0.25rem;
+        right: -0.25rem;
+        z-index: 2;
+
+        i {
+          cursor: pointer;
+          font-size: 1rem;
+          background: #e74c3c;
+          color: #fff;
+          border-radius: 50%;
+          padding: 0.4rem;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          transition: background .2s, transform .2s;
+
+          &:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+          }
+        }
+      }
 
       img { width: 100%; display: block; }
 
@@ -346,10 +366,15 @@ header {
         span { font-size: 0.9rem; color: #999; }
       }
     }
+
+    .card.add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
-// Footer
 footer {
   background: #fff;
   padding: 2rem;
